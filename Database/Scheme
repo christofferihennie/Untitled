@@ -1,0 +1,63 @@
+USER(ID, Firstname, Lastname, Higest_Streak, Current_Streak)
+- KN/PN: {ID}
+
+BOOK(ID, Original_title)
+- KN/PN: {ID}
+
+BOOK_GENRE(Book_ID, genre)
+- KN/PN: {Book_ID, genre}
+- FN: Book_ID -> BOOK(ID)
+
+SERIES_ENTRY(Book_ID, Series_Name, Number)
+- KN/PN: {Book_ID, Series_Name}
+- FN:   Book_ID -> BOOK(ID)
+        Series_Name -> SERIES(Name)
+
+SERIES(Name)
+- KN/PN: {Name}
+
+EDITION(ISBN, Title, Year, Pages, Cuver_URL, Format, Publisher, Book_ID)
+- KN/PN: {ISBN}
+- FN:   Book_ID -> BOOK(ID)
+        Publisher -> PUBLISHER(Name)
+
+PUBLISHER(Name)
+- KN/PN: {Name}
+
+LIST(User_ID, List_Name)
+- KN/PN: {User_ID, List_name}
+- FN: User_ID -> USER(ID)
+
+List_Entry(User_ID, List_Name, Book_ID)
+- KN/PN: {User_ID, List_Name, Book_ID}
+- FN:   User_ID -> USER(ID)
+        Book_ID -> BOOK(ID)
+        List_Name -> LIST(name)
+
+REVIEW(User_ID, Book_ID, Rating, Text_Review)
+- KN/PN: {User_ID, Book_ID}
+- FN:   User_ID -> USER(ID)
+        Book_ID -> BOOK(ID)
+
+READ(User_ID, ISBN, Start_Date, End_Date, Status)
+- KN/PN: {ISBN, User_ID, Start_Date}
+- FN:   User_ID -> USER(ID)
+        ISBN -> EDITION(ISBN)
+
+JOURNAL(User_ID, ISBN, Date, From_Page, To_Page)
+- KN/PN: {User_ID, ISBN, Date}
+- FN:   User_ID -> USER(ID)
+        ISBN -> EDITION(ISBN)
+
+CONTRIBUTOR(ID, Firstname, Lastname)
+- KN/PN: {ID}
+
+AUTHOR(Book_ID, Author_ID)
+- KN/PN: {Author_ID, Book_ID}
+- FN:   Author_ID -> CONTRIBUTOR(ID)
+        Book_ID -> BOOK(ID)
+
+TRANSLATOR(ISBN, Translator_ID, Language)
+- KN/PN: {Translator_ID, ISBN}
+- FN:   Translator_ID -> CONTRIBUTOR(ID)
+        ISBN -> EDITION(ISBN)
