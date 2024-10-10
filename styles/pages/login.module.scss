@@ -1,0 +1,81 @@
+@import '../variables';
+
+.center {
+    margin-top: calc($spacing-huge * 10);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form {
+    all: unset;
+    width: 100%;
+}
+
+.email {
+    margin-bottom: $spacing-large;
+}
+
+.password {
+    margin-bottom: $spacing-xlarge;
+}
+
+.email, .password {
+    label {
+        display: block;
+        font-family: $public-sans;
+        font-weight: 300;
+        font-size: $font-size-xsmall;
+        color: $color-gray-1000;
+        margin-bottom: $spacing-xxsmall;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        background-color: $color-gray-100;
+        border: 1px solid $color-gray-500;
+        border-radius: 8px;
+        padding: $spacing-medium;
+
+        font-family: $public-sans;
+        font-weight: 400;
+        color: $color-gray-900;
+        font-size: $font-size-small;
+    }
+}
+
+.login, .signUp {
+    padding: $spacing-small $spacing-large;
+    border-radius: 8px;
+    border: none;
+    
+    font-family: $public-sans;
+    font-size: $font-size-p;
+    font-weight: 600;
+}
+
+.login {
+    margin-right: $spacing-large;
+    border-radius: 8px;
+    background: $color-green-gradient-900-800;
+    
+    font-family: $public-sans;
+    font-size: $font-size-p;
+    font-weight: 600;
+    color: $color-gray-10;
+}
+
+.signUp {
+    outline: 2px solid $color-green-800;
+    color: $color-green-800;
+}
+
+.error_message {
+    height: $font-size-p;
+    font-family: $public-sans;
+    font-size: $font-size-small;
+    font-weight: 400;
+    color: $color-red-800
+}

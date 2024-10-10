@@ -1,14 +1,49 @@
-import { login, signUp } from './actions'
+'use client';
+
+import Header from '@/components/header';
+import styles from '@/styles/pages/login.module.scss';
+import { login, signUp } from './actions';
+import { useFormState } from 'react-dom';
+
+const initialState: any = {
+    code: '',
+    message: '',
+};
 
 export default function LoginPage() {
+    const [state, loginAction] = useFormState(login, initialState);
+
     return (
-        <form>
-            <label htmlFor="email">Epost:</label>
-            <input id="email" name="email" type="email" required />
-            <label htmlFor="password">Passord:</label>
-            <input id="password" name="password" type="password" required />
-            <button formAction={login}>Logg inn</button>
-            <button formAction={signUp}>Lag bruker</button>
-        </form>
-    )
+        <>
+            <Header heading='Velkommen!' subheading='Logg inn eller lag bruker' />
+            <div className={styles.center}>
+                <form className={styles.form}>
+                    <div className={styles.email}>
+                        <label htmlFor='email'>E-post:</label>
+                        <input id='email' name='email' type='email' required />
+                    </div>
+                    <div className={styles.password}>
+                        <label htmlFor='password'>Passord:</label>
+                        <input id='password' name='password' type='password' required />
+                        <button></button>
+                    </div>
+                    <div className={styles.buttons}>
+                        <button formAction={loginAction} className={styles.login}>
+                            Logg inn
+                        </button>
+                        <button formAction={signUp} className={styles.signUp}>
+                            Lag bruker
+                        </button>
+                    </div>
+                </form>
+                {state?.code ? (
+                    <p className={styles.error_message}>
+                        {state.code}: {state.message}
+                    </p>
+                ) : (
+                    ''
+                )}
+            </div>
+        </>
+    );
 }

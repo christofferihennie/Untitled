@@ -23,7 +23,7 @@ const todayFormatted = () => {
     return `${date.getDate()}. ${months[date.getMonth()]}, ${date.getFullYear()}`;
 };
 
-export default async function Home() {
+export default async function HomePage() {
     const supabase = createClient();
     const { data: user, error } = await supabase.from('user').select('firstname').single();
 
