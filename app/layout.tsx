@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     robots: {
         index: false,
         follow: false,
-        nocache: true,
+        nocache: false,
     },
     appleWebApp: {
         title: 'Untitled',
@@ -23,8 +23,9 @@ export const metadata: Metadata = {
         ],
     },
     icons: {
-        icon: 'favicon/favicon-32x32.png',
-        apple: 'favicon/apple-touch-icon.png',
+        icon: ['favicon.svg', 'favicon-48x48.png'],
+        apple: 'favicon.svg',
+        shortcut: ['favicon-32x32.png', 'apple-touch-icon.png'],
     },
 };
 
