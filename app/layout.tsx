@@ -24,15 +24,7 @@ export const metadata: Metadata = {
     },
     icons: {
         icon: ['favicon.svg', 'favicon-48x48.png'],
-        apple: [
-            {
-                url: 'apple-touch-icon-dark.png',
-                media: '(prefers-color-scheme: dark)',
-            },
-            {
-                url: 'apple-touch-icon.png',
-            },
-        ],
+        apple: 'apple-touch-icon.png',
         shortcut: ['favicon-32x32.png', 'apple-touch-icon.png', 'apple-touch-icon-dark.png'],
     },
     other: {
