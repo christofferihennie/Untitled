@@ -1,7 +1,7 @@
-import type { Metadata } from 'next';
-import { Public_Sans, Playfair_Display } from 'next/font/google';
-import '@/styles/globals.scss';
 import Navigation from '@/components/navigation';
+import '@/styles/globals.scss';
+import type { Metadata } from 'next';
+import { Playfair_Display, Public_Sans } from 'next/font/google';
 
 export const metadata: Metadata = {
     title: 'Untitled',
@@ -28,6 +28,7 @@ export default function RootLayout({
     return (
         <html lang='no' className={`${playfair_display.variable} ${public_sans.variable}`}>
             <head>
+                <link rel='manifest' href='manifest.json' />
                 <link rel='icon' type='image/png' href='favicon/favicon-48x48.png' sizes='48x48' />
                 <link rel='icon' type='image/svg+xml' href='favicon/favicon.svg' />
                 <link rel='shortcut icon' href='favicon/favicon.ico' />

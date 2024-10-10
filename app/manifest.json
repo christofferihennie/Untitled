@@ -3,9 +3,9 @@
     "short_name": "Untitled'",
     "description": "En app for å loggføre hvor mye man leser'",
     "start_url": "/login",
-    "display": "standalone'",
-    "background_color": "#ffffff'",
-    "theme_color": "#000000'",
+    "display": "standalone",
+    "background_color": "#F2F2F2'",
+    "theme_color": "#1e8145'",
     "icons": [
         {
             "src": "favicon/web-app-manifest-192x192.png",
