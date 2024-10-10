@@ -11,4 +11,5 @@ body {
 
 .border {
     margin: $spacing-huge;
+    margin-bottom: calc($spacing-huge * 6);
 }
