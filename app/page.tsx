@@ -1,17 +1,37 @@
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from '@/utils/supabase/server';
+import styles from '@/styles/pages/index.module.scss';
+import Header from '@/components/header';
+
+const todayFormatted = () => {
+    const date: Date = new Date();
+
+    const months: string[] = [
+        'januar',
+        'februar',
+        'mars',
+        'april',
+        'mai',
+        'juni',
+        'juli',
+        'august',
+        'september',
+        'oktober',
+        'november',
+        'desember',
+    ];
+
+    return `${date.getDate()}. ${months[date.getMonth()]}, ${date.getFullYear()}`;
+};
 
 export default async function Home() {
-  const supabase = createClient();
-  const { data: { user } } = await supabase.auth.getUser();
+    const supabase = createClient();
+    const { data: user, error } = await supabase.from('user').select('firstname').single();
 
-  const { data: profile, error } = await supabase.from('user').select('id');
+    const today = todayFormatted();
 
-
-  console.log(profile)
-
-  return (
-    <div className="main">
-      <h1>Untitled</h1>
-    </div>
-  );
+    return (
+        <div className='main'>
+            <Header heading={`God Morgen, ${user?.firstname}!`} subheading={`I dag er ${today}`} />
+        </div>
+    );
 }
