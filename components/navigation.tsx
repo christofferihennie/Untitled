@@ -1,41 +1,50 @@
 'use client';
 
+import styles from '@/styles/components/navigation.module.scss';
 import {
+    ChartBarIcon as ChartOutline,
     HomeIcon as HomeOutline,
     BuildingLibraryIcon as LibraryOutline,
-    ChartBarIcon as ChartOutline,
     UserIcon as UserOutline,
 } from '@heroicons/react/24/outline';
 import {
+    ChartBarIcon as ChartSolid,
     HomeIcon as HomeSolid,
     BuildingLibraryIcon as LibrarySolid,
-    ChartBarIcon as ChartSolid,
     UserIcon as UserSolid,
 } from '@heroicons/react/24/solid';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import styles from '@/styles/components/navigation.module.scss';
+import { usePathname } from 'next/navigation';
 
 export default function Navigation() {
     const pathRoot = usePathname().split('/')[1];
     return (
         <nav className={styles.navbar}>
-            <NavItem pathRoot={pathRoot} path='' solidIcon={HomeSolid} outlineIcon={HomeOutline} />
             <NavItem
+                name="Hjem"
                 pathRoot={pathRoot}
-                path='library'
+                path=""
+                solidIcon={HomeSolid}
+                outlineIcon={HomeOutline}
+            />
+            <NavItem
+                name="Bibliotek"
+                pathRoot={pathRoot}
+                path="library"
                 solidIcon={LibrarySolid}
                 outlineIcon={LibraryOutline}
             />
             <NavItem
+                name="Statistikk"
                 pathRoot={pathRoot}
-                path='statistics'
+                path="statistics"
                 solidIcon={ChartSolid}
                 outlineIcon={ChartOutline}
             />
             <NavItem
+                name="Profil"
                 pathRoot={pathRoot}
-                path='profile'
+                path="profile"
                 solidIcon={UserSolid}
                 outlineIcon={UserOutline}
             />
@@ -44,6 +53,7 @@ export default function Navigation() {
 }
 
 const NavItem = (props: {
+    name: string;
     path: string;
     pathRoot: string;
     solidIcon: React.ComponentType<{
@@ -65,7 +75,7 @@ const NavItem = (props: {
                 ) : (
                     <props.outlineIcon className={styles.icon} />
                 )}
-                <span className={styles.text}>Hjem</span>
+                <span className={styles.text}>{props.name}</span>
             </Link>
         </div>
     );
