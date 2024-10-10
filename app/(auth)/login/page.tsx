@@ -2,8 +2,8 @@
 
 import Header from '@/components/header';
 import styles from '@/styles/pages/login.module.scss';
-import { login, signUp } from './actions';
 import { useFormState } from 'react-dom';
+import { login, signUp } from './actions';
 
 const initialState: any = {
     code: '',
@@ -15,16 +15,16 @@ export default function LoginPage() {
 
     return (
         <>
-            <Header heading='Velkommen!' subheading='Logg inn eller lag bruker' />
+            <Header heading="Velkommen!" subheading="Logg inn eller lag bruker" />
             <div className={styles.center}>
                 <form className={styles.form}>
                     <div className={styles.email}>
-                        <label htmlFor='email'>E-post:</label>
-                        <input id='email' name='email' type='email' required />
+                        <label htmlFor="email">E-post:</label>
+                        <input id="email" name="email" type="email" required />
                     </div>
                     <div className={styles.password}>
-                        <label htmlFor='password'>Passord:</label>
-                        <input id='password' name='password' type='password' required />
+                        <label htmlFor="password">Passord:</label>
+                        <input id="password" name="password" type="password" required />
                         <button></button>
                     </div>
                     <div className={styles.buttons}>
