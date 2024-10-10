@@ -15,16 +15,16 @@ export const metadata: Metadata = {
         title: 'Untitled',
         statusBarStyle: 'black-translucent',
         startupImage: [
-            '/favicon/iPhone_16_Plus__iPhone_15_Pro_Max__iPhone_15_Plus__iPhone_14_Pro_Max_portrait.png',
+            'favicon/iPhone_16_Plus__iPhone_15_Pro_Max__iPhone_15_Plus__iPhone_14_Pro_Max_portrait.png',
             {
-                url: '/favicon/iPhone_16_Plus__iPhone_15_Pro_Max__iPhone_15_Plus__iPhone_14_Pro_Max_portrait.png',
+                url: 'favicon/iPhone_16_Plus__iPhone_15_Pro_Max__iPhone_15_Plus__iPhone_14_Pro_Max_portrait.png',
                 media: '(device-width: 768px) and (device-height: 1024px)',
             },
         ],
     },
     icons: {
-        icon: '/favicon/favicon-32x32.png',
-        apple: '/favicon/apple-touch-icon.png',
+        icon: 'favicon/favicon-32x32.png',
+        apple: 'favicon/apple-touch-icon.png',
     },
 };
 
