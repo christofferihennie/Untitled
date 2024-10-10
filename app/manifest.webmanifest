@@ -2,7 +2,7 @@
     "name": "Untitled, bok app'",
     "short_name": "Untitled'",
     "description": "En app for å loggføre hvor mye man leser'",
-    "start_url": "/'",
+    "start_url": "/login",
     "display": "standalone'",
     "background_color": "#ffffff'",
     "theme_color": "#000000'",
